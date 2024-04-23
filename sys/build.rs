@@ -137,6 +137,7 @@ fn main() {
         let metal_resource_path = out.join("whisper.cpp");
         assert!(metal_resource_path.exists());
         env::set_var("GGML_METAL_PATH_RESOURCES", metal_resource_path);
+        env::set_var("GGML_METAL_EMBED_LIBRARY", "");
     } else {
         // Metal is enabled by default, so we need to explicitly disable it
         config.define("WHISPER_METAL", "OFF");
